@@ -32,4 +32,8 @@ python -m visdom.server
 参数选择 "--gpu_ids", "-1",  # 参数 0 是GPU ,参数 -1 是CPU
 ```
 
+
+### 测试
+运行resize_back_to_original.py进行图片拉伸。保存到datasets/gen里面
+
   
