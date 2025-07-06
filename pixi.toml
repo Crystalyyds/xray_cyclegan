@@ -1,0 +1,36 @@
+[workspace]
+authors = ["Crystalyyds"]
+channels = ["conda-forge"]
+name = "xray_cyclegan"
+platforms = ["linux-64", "win-64"]
+version = "0.1.0"
+
+[tasks]
+rename_and_copy = { cmd = "cd datasets && python rename_and_copy.py" }
+train_xray = { cmd = "python train_xray.py" }
+
+[dependencies]
+python = ">=3.8, <3.9"
+pixi-pycharm = ">=0.0.8,<0.0.9"
+
+[pypi-dependencies]
+dominate = "==2.6.0"
+pillow = ">=8.0.1, <8.1"
+numpy = ">=1.19.2, <1.20"
+wandb = "==0.12.18"
+visdom = { git = "https://github.com/fossasia/visdom.git" }
+
+[feature.gpu.system-requirements]
+cuda = "11.1"
+
+[feature.gpu.pypi-dependencies]
+torch = { version = ">=1.8.1, <1.9", index = "https://download.pytorch.org/whl/cu111" }
+torchvision = { version = ">=0.9.1, <0.10", index = "https://download.pytorch.org/whl/cu111" }
+
+[feature.cpu.pypi-dependencies]
+torch = { version = ">=1.8.1, <1.9", index = "https://download.pytorch.org/whl/cpu" }
+torchvision = { version = ">=0.9.1, <0.10", index = "https://download.pytorch.org/whl/cpu" }
+
+[environments]
+cpu = { features = ["cpu"] }
+default = { features = ["gpu"] }
