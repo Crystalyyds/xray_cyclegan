@@ -51,3 +51,10 @@ pixi：
 pixi run rename_and_copy
 pixi run train_xray
 ```
+
+### 拉伸
+运行resize_back_to_original.py进行图片拉伸。保存到datasets/gen里面
+
+### 测试
+运行 test_xray.py 进行测试。保存到datasets/fake_test
+
