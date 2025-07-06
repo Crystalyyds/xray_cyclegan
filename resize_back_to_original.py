@@ -7,7 +7,7 @@ def upscale_all_images(
 ):
     os.makedirs(output_dir, exist_ok=True)
 
-    print(f"🔄 正在将所有图像统一放大到 {target_size} ...")
+    print(f"将所有图像统一放大到 {target_size} ...")
     for fname in tqdm(os.listdir(input_dir)):
         if fname.lower().endswith((".png", ".jpg", ".jpeg")):
             input_path = os.path.join(input_dir, fname)
@@ -16,11 +16,11 @@ def upscale_all_images(
                     resized_img = img.resize(target_size, Image.BICUBIC)
                     save_path = os.path.join(output_dir, fname)
                     resized_img.save(save_path)
-                    print(f"✅ 放大并保存: {fname}，新大小: {target_size}")
+                    print(f"放大并保存: {fname}，新大小: {target_size}")
             except Exception as e:
-                print(f"⚠️ 处理图像失败 {fname}: {e}")
+                print(f" 处理图像失败 {fname}: {e}")
 
-    print(f"\n🎉 所有图像已放大并保存到: {output_dir}")
+    print(f"\n 所有图像已放大并保存到: {output_dir}")
 
 if __name__ == "__main__":
     input_images_dir = "./checkpoints/xray_patch_model/web/images"  # 输入图片路径
