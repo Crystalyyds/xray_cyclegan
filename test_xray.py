@@ -26,7 +26,7 @@ def run_test():
 
 def copy_fakeB_to_trainB():
     result_dir = "./checkpoints/xray_patch_model/test_latest/images"
-    target_dir = "./datasets/xray_gen/trainB_aug"
+    target_dir = "./datasets/fake_test"
 
     os.makedirs(target_dir, exist_ok=True)
 
