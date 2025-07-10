@@ -5,7 +5,15 @@ results/
 build/
 dist/
 *.png
+*.
+test_log.txt
+train_log.txt
+/datasets/gen
+/datasets/xray_gen
+/datasets/useful_photo
+/datasets/padding_info.json
 torch.egg-info/
+/datasets
 */**/__pycache__
 torch/version.py
 torch/csrc/generic/TensorMethods.cpp

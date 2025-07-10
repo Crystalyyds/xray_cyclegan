@@ -24,23 +24,5 @@ def run_test():
         ], stdout=f, stderr=subprocess.STDOUT, check=True)
 
 
-def copy_fakeB_to_trainB():
-    result_dir = "./checkpoints/xray_patch_model/test_latest/images"
-    target_dir = "./datasets/fake_test"
-
-    os.makedirs(target_dir, exist_ok=True)
-
-    count = 0
-    for filename in os.listdir(result_dir):
-        if filename.endswith("fake_B.png"):
-            src = os.path.join(result_dir, filename)
-            dst = os.path.join(target_dir, f"aug_{count:04d}.png")
-            shutil.copy(src, dst)
-            count += 1
-
-    print(f"已复制 {count} 张 fake_B 图像到 {target_dir}")
-
-
 if __name__ == "__main__":
     run_test()
-    copy_fakeB_to_trainB()
