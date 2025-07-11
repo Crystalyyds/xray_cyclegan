@@ -7,6 +7,7 @@ import numpy as np
 import json
 
 
+
 # 创建文件夹
 def create_xray_gen_folders(base_dir="xray_gen"):
     subfolders = ["trainA", "trainB", "testA", "testB"]
@@ -131,7 +132,7 @@ def copy_random_10_to_testB():
         shutil.copy(src, dst)
         print(f"复制 {filename} 到 testB")
 
-    print("随机复制完成：10张图片已保存到 xray_gen/testB")
+    print("随机10张图片保存到 xray_gen/testB")
 
 
 def generate_black_images(src_dir, dst_dir):
