@@ -12,7 +12,7 @@ def train():
             "--preprocess", "resize",
             "--gpu_ids", "-1",
             "--no_flip",  # 禁用水平翻转
-            "--display_id", "0",
+            "--display_id", "0",  # 0
             "--display_freq", "10",
             "--update_html_freq", "2",
             "--num_threads", "0",
@@ -20,9 +20,9 @@ def train():
             "--load_size", "1024",
             "--crop_size", "1024",
             "--lambda_L1", "100",
-            "--n_epochs", "50",
-            "--n_epochs_decay", "100",
-            "--save_epoch_freq", "5",
+            "--n_epochs", "50",  # 50
+            "--n_epochs_decay", "100",  # 100
+            "--save_epoch_freq", "5",  # 5
             "--print_freq", "20",
         ], stdout=f, stderr=subprocess.STDOUT, check=True)
 
